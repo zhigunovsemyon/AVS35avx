@@ -18,7 +18,7 @@ template <std::integral T> consteval uint16_t int_count_space()
 template <std::floating_point T> void print_array(std::span<T> A)
 {
 	for (auto n : A)
-		std::print("{:7.2f} ", n);
+		std::print("{:10.2e} ", n);
 	std::println();
 }
 
