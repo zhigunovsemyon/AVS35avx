@@ -13,10 +13,10 @@ typedef uint16_t u16;
 typedef int32_t i32;
 typedef uint32_t u32;
 
-static void sse_f64_mult()
+static void avx_f64_mult()
 {
 	using type = f64;
-	puts("Задание 1. f64 C = A * B");
+	puts("Задание 2. f64 C = A * B");
 	type a[4] = {3.5, 111.0, -std::numeric_limits<type>::infinity(), -10.0};
 	type b[4] = {0.5, std::numeric_limits<type>::min(), -0.1, 12.3};
 	type c[4] = {0.0, 0.0, 0.0, 0.0};
@@ -35,10 +35,10 @@ static void sse_f64_mult()
 	print_array(std::span{c, 4});
 }
 
-static void sse_f32_div()
+static void avx_f32_div()
 {
 	using type = f32;
-	puts("Задание 2. f32 C = A / B");
+	puts("Задание 1. f32 C = A / B");
 	type a[8] = {
 		1.1f,	13.37f, 3.5f, 1.0f,
 		-10.0f, 8.8f,	0.0f, std::numeric_limits<type>::quiet_NaN()};
@@ -70,10 +70,10 @@ static void sse_f32_div()
 int main()
 {
 
-	sse_f32_div();
+	avx_f32_div();
 	std::println();
 
-	sse_f64_mult();
+	avx_f64_mult();
 
 	puts("Нажмите любую кнопку для завершения");
 	(void)getchar();
